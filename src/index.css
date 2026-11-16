@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Nunito', sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8B6E2;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A9C6D8;
+}
+
+/* Subtle glassmorphism */
+.glass-card {
+  background: rgba(255, 253, 251, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(234, 226, 244, 0.6);
+}
+
+.dark .glass-card {
+  background: rgba(36, 29, 50, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(60, 48, 83, 0.6);
+}
+
+/* Custom interactive pulse */
+@keyframes floatParticle {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateY(-15px) rotate(180deg); opacity: 0.4; }
+  100% { transform: translateY(0px) rotate(360deg); opacity: 0.8; }
+}
+
+.animate-particle {
+  animation: floatParticle 8s ease-in-out infinite;
+}
